@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nested Table</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: serif;
+        }
+
+        h1 {
+            color: green;
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        .outer-table {
+            width: 600px;
+            height: 300px;
+            border: 2px solid gray;
+        }
+
+        .outer-table td {
+            border: 2px solid gray;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .nested-wrapper {
+            padding: 10px;
+        }
+
+        .nested-table {
+            width: 100%;
+            border: 2px solid blue;
+        }
+
+        .nested-table td {
+            border: 2px solid blue;
+            padding: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>GeeksforGeeks</h1>
+
+    <table class="outer-table">
+        <tr>
+            <td rowspan="2">Table 1</td>
+            <td>
+                <div>Table 1</div>
+                <div class="nested-wrapper">
+                    <table class="nested-table">
+                        <tr>
+                            <td>Table 2</td>
+                            <td>Table 2</td>
+                        </tr>
+                        <tr>
+                            <td>Table 2</td>
+                            <td>Table 2</td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1">Table 1</td>
+        </tr>
+        <tr>
+            <td>Table 1</td>
+            <td>Table 1</td>
+        </tr>
+    </table>
+
+</body>
+</html>
