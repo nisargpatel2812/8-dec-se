@@ -1,0 +1,321 @@
+1)
+- website :: it is a multiple related pages under one name.
+
+- webpages :: it is a single page of website
+
+- web browser :: it is a app/software from which we can access the website
+
+- web server :: it is a system who stores the data of website and provide to the user when they want
+
+- html :: hyper text markuo language
+          
+          it is used for make heading,paragraphs,images,table...etc
+
+- css :: it is casacanding styling sheet
+ 
+         from this we can add colors,diff fonts,bold...many more to the text
+
+-------------------------------------------------------------------------------------------------------
+
+2) Create a webpage to show “This is my first HTML page”  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>HTML</title>
+</head>
+<body>
+    <h1>This is my first program</h1>
+</body>
+
+-------------------------------------------------------------------------------------------------------
+
+3)  Display top 10 IT companies list in html webpage  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Top 10 IT COMPANIES</title>
+</head>
+<body>
+    <h1>Top 10 IT COMPANIES</h1>
+    <ol>
+        <li>Tata Consultancy Services (TCS)</li>
+        <li>Infosys</li>
+        <li>Wipro</li>
+        <li>HCL Technologies</li>
+        <li>Tech Mahindra</li>
+        <li>IBM</li>
+        <li>Microsoft</li>
+        <li>Google</li>
+        <li>Accenture</li>
+        <li>Oracle</li>
+    </ol>
+</body>
+</html>
+
+-------------------------------------------------------------------------------------------------------
+
+4)  Create a dropdown list  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dropdown List</title>
+</head>
+<body>
+    <h2>Select a City</h2>
+
+    <select name="city">
+        <option selected disabled readonly>-- Select Any --</option>
+        <option value="Ahemdabad" >Ahemdabad</option>
+        <option value="Rajkot" >Rajkot</option>
+        <option value="Surat" >Surat</option>
+    </select>
+</body>
+</html>
+
+-------------------------------------------------------------------------------------------------------
+
+5) Create a Table Of college Management system using row span & col span.  
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Management System</title>
+    <style>
+         table
+        {
+            border: 5px solid blue;
+            border-collapse: collapse;
+            width : 100%;
+            
+        }
+        tr,td,th
+        {
+            text-align : center;
+            border: 3px solid blue;
+            padding: 25px;
+        }
+
+        th
+        {
+            background-color: white;
+            color:black;
+        }
+
+        tr,td
+        {
+            background-color: white;
+            color: black;
+        }
+        body 
+        {
+            background-color: white;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>College Management System</h2>
+
+    <table>
+        <tr>
+            <th rowspan="2">Department</th>
+            <th colspan="2">Student Details</th>
+            <th>HOD</th>
+        </tr>
+        <tr>
+            <th>Total Students</th>
+            <th>Class Room</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td>IT</td>
+            <td>120</td>
+            <td>A-101</td>
+            <td>Mr. Shah</td>
+        </tr>
+        <tr>
+            <td>Computer</td>
+            <td>100</td>
+            <td>B-201</td>
+            <td>Mrs. Patel</td>
+        </tr>
+        <tr>
+            <td>Mechanical</td>
+            <td>90</td>
+            <td>C-301</td>
+            <td>Mr. Mehta</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+
+-------------------------------------------------------------------------------------------------------
+
+6) 
+
+-------------------------------------------------------------------------------------------------------
+
+7) Create Registration form using HTML, CSS  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table
+        {
+            width: 50%;
+        }
+        tr,td
+        {
+            padding: 20 px;
+            background-color: rgb(248, 250, 246);
+            border: 2px solid rgb(28, 37, 209);
+        }
+    </style>
+</head>
+
+
+<body>
+    <body>
+        <table>
+            <tbody>
+                <form>
+                    <th>
+                        -- FORM --
+                    </th>
+                    <tr>
+                        <td><lable>First Name : </lable></td>
+                        <td><input type="text" placeholder="Enter First Name : " name="fname" required /></td>
+                    </tr>
+
+                    <tr> 
+                        <td>
+                            <label>Email : </label>
+                        </td>
+                        <td>
+                            <input type="email" placeholder="example@domain.com" name="email" required />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <lable>Password : </lable>
+                        </td>
+                        <td>
+                            <input type="password" placeholder="Enter Your Password" name="password" required />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <lable>Gender</lable>
+
+                        </td>
+                        <td>
+                            <input type="radio" name="gender" value="Male"> Male
+                            <input type="radio" name="gender" value="Female"> Female
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <lable>Hobbies </lable>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="c_chk" value="Clanguage"> C language
+                            <input type="checkbox" name="j_chk" value="Java"> Java
+                            <input type="checkbox" name="p_chk" value="Python"> Python
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>City</label>
+                        </td>
+                        <td>
+                            <select name="city">
+                                <option selected disabled readonly>-- Select Any --</option>
+                                <option value="Ahemdabad" >Ahemdabad</option>
+                                <option value="Rajkot" >Rajkot</option>
+                                <option value="Surat" >Surat</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <lable>Address</lable>
+                        </td>
+                        <td>
+                            <textarea rows="10" cols="25" placeholder="type your address"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="SUBMIT" /></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </body>
+    
+</body>
+</html>
+
+-------------------------------------------------------------------------------------------------------
+
+8) In how many ways can a CSS be integrated as a web page?  
+
+by 3 ways we can do This
+
+i) inline : it is written insidde the html using style tag
+
+ii) internal : it is written IN <style></style> in <html>
+
+iii) external : it is written saperatly via .css 
+
+-------------------------------------------------------------------------------------------------------
+
+9)
+
+-------------------------------------------------------------------------------------------------------
+
+10) PAGE :: 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Individual Registration</title>
+    <style>
+        body 
+        {
+            background-color: white;
+        }
+
+        .title-bar {
+            width: 95%;
+            margin: 30px auto;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            color: red;
+            padding: 5px 0;
+            background:  rgb(38, 189, 240);
+        }
+    </style>
+
+</head>
+</html>
+
+<body>
+        <div class="title-bar">Individual Registration</div>
+
+</body>
