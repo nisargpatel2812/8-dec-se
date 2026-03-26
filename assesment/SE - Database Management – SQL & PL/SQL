@@ -1,0 +1,198 @@
+Microsoft Windows [Version 10.0.26100.8037]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Nisarg>mysql -u root -p
+Enter password: **********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.44 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| 8decse             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use 8decse;
+Database changed
+mysql> show tables;
++------------------+
+| Tables_in_8decse |
++------------------+
+| dummy1           |
+| student          |
+| user             |
++------------------+
+3 rows in set (0.00 sec)
+
+mysql> CREATE TABLE Nobel_win (
+    ->     year INT,
+    ->     subject VARCHAR(50),
+    ->     winner VARCHAR(100),
+    ->     country VARCHAR(50),
+    ->     category VARCHAR(50)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc Noble_win;
+ERROR 1146 (42S02): Table '8decse.noble_win' doesn't exist
+mysql> show tablles;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tablles' at line 1
+mysql> show tables;
++------------------+
+| Tables_in_8decse |
++------------------+
+| dummy1           |
+| nobel_win        |
+| student          |
+| user             |
++------------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO Nobel_win (year, subject, winner, country, category)
+    -> VALUES
+    -> (1970,'Physics','Hannes Alfven','Sweden','Scientist'),
+    -> (1970,'Physics','Louis Neel','France','Scientist'),
+    -> (1970,'Chemistry','Luis Federico Leloir','France','Scientist'),
+    -> (1970,'Physiology','Ulf von Euler','Sweden','Scientist'),
+    -> (1970,'Physiology','Bernard Katz','Germany','Scientist'),
+    -> (1970,'Literature','Aleksandr Solzhenitsyn','Russia','Linguist'),
+    -> (1970,'Economics','Paul Samuelson','USA','Economist'),
+    -> (1970,'Physiology','Julius Axelrod','USA','Scientist'),
+    ->
+    -> (1971,'Physics','Dennis Gabor','Hungary','Scientist'),
+    -> (1971,'Chemistry','Gerhard Herzberg','Germany','Scientist'),
+    -> (1971,'Peace','Willy Brandt','Germany','Chancellor'),
+    -> (1971,'Literature','Pablo Neruda','Chile','Linguist'),
+    -> (1971,'Economics','Simon Kuznets','Russia','Economist'),
+    ->
+    -> (1978,'Peace','Anwar al-Sadat','Egypt','President'),
+    -> (1978,'Peace','Menachem Begin','Israel','Prime Minister'),
+    ->
+    -> (1987,'Chemistry','Donald J. Cram','USA','Scientist'),
+    -> (1987,'Chemistry','Jean-Marie Lehn','France','Scientist'),
+    -> (1987,'Physiology','Susumu Tonegawa','Japan','Scientist'),
+    ->
+    -> (1994,'Economics','Reinhard Selten','Germany','Economist'),
+    -> (1994,'Peace','Yitzhak Rabin','Israel','Prime Minister'),
+    ->
+    -> (1987,'Physics','Johannes Georg Bednorz','Germany','Scientist'),
+    -> (1987,'Literature','Joseph Brodsky','Russia','Linguist'),
+    -> (1987,'Economics','Robert Solow','USA','Economist'),
+    ->
+    -> (1994,'Literature','Kenzaburo Oe','Japan','Linguist');
+Query OK, 24 rows affected (0.04 sec)
+Records: 24  Duplicates: 0  Warnings: 0
+
+mysql> desc noble_win;
+ERROR 1146 (42S02): Table '8decse.noble_win' doesn't exist
+mysql> select * from nobel_win;
++------+------------+------------------------+---------+----------------+
+| year | subject    | winner                 | country | category       |
++------+------------+------------------------+---------+----------------+
+| 1970 | Physics    | Hannes Alfven          | Sweden  | Scientist      |
+| 1970 | Physics    | Louis Neel             | France  | Scientist      |
+| 1970 | Chemistry  | Luis Federico Leloir   | France  | Scientist      |
+| 1970 | Physiology | Ulf von Euler          | Sweden  | Scientist      |
+| 1970 | Physiology | Bernard Katz           | Germany | Scientist      |
+| 1970 | Literature | Aleksandr Solzhenitsyn | Russia  | Linguist       |
+| 1970 | Economics  | Paul Samuelson         | USA     | Economist      |
+| 1970 | Physiology | Julius Axelrod         | USA     | Scientist      |
+| 1971 | Physics    | Dennis Gabor           | Hungary | Scientist      |
+| 1971 | Chemistry  | Gerhard Herzberg       | Germany | Scientist      |
+| 1971 | Peace      | Willy Brandt           | Germany | Chancellor     |
+| 1971 | Literature | Pablo Neruda           | Chile   | Linguist       |
+| 1971 | Economics  | Simon Kuznets          | Russia  | Economist      |
+| 1978 | Peace      | Anwar al-Sadat         | Egypt   | President      |
+| 1978 | Peace      | Menachem Begin         | Israel  | Prime Minister |
+| 1987 | Chemistry  | Donald J. Cram         | USA     | Scientist      |
+| 1987 | Chemistry  | Jean-Marie Lehn        | France  | Scientist      |
+| 1987 | Physiology | Susumu Tonegawa        | Japan   | Scientist      |
+| 1994 | Economics  | Reinhard Selten        | Germany | Economist      |
+| 1994 | Peace      | Yitzhak Rabin          | Israel  | Prime Minister |
+| 1987 | Physics    | Johannes Georg Bednorz | Germany | Scientist      |
+| 1987 | Literature | Joseph Brodsky         | Russia  | Linguist       |
+| 1987 | Economics  | Robert Solow           | USA     | Economist      |
+| 1994 | Literature | Kenzaburo Oe           | Japan   | Linguist       |
++------+------------+------------------------+---------+----------------+
+24 rows in set (0.00 sec)
+
+
+===========================================================
+
+TASKS :::
+
+mysql> SELECT year, subject, winner
+    -> FROM Nobel_win
+    -> WHERE year = 1970;
++------+------------+------------------------+
+| year | subject    | winner                 |
++------+------------+------------------------+
+| 1970 | Physics    | Hannes Alfven          |
+| 1970 | Physics    | Louis Neel             |
+| 1970 | Chemistry  | Luis Federico Leloir   |
+| 1970 | Physiology | Ulf von Euler          |
+| 1970 | Physiology | Bernard Katz           |
+| 1970 | Literature | Aleksandr Solzhenitsyn |
+| 1970 | Economics  | Paul Samuelson         |
+| 1970 | Physiology | Julius Axelrod         |
++------+------------+------------------------+
+8 rows in set (0.01 sec)
+
+mysql> SELECT year, subject, winner, country
+    -> FROM Nobel_win
+    -> WHERE subject = 'Chemistry'
+    -> AND year BETWEEN 1965 AND 1975;
++------+-----------+----------------------+---------+
+| year | subject   | winner               | country |
++------+-----------+----------------------+---------+
+| 1970 | Chemistry | Luis Federico Leloir | France  |
+| 1971 | Chemistry | Gerhard Herzberg     | Germany |
++------+-----------+----------------------+---------+
+2 rows in set (0.01 sec)
+
+mysql> SELECT year, subject, winner, country
+    -> FROM Nobel_win
+    -> WHERE winner LIKE 'Louis%';
++------+---------+------------+---------+
+| year | subject | winner     | country |
++------+---------+------------+---------+
+| 1970 | Physics | Louis Neel | France  |
++------+---------+------------+---------+
+1 row in set (0.01 sec)
+
+mysql> SELECT *
+    -> FROM Nobel_win
+    -> WHERE subject NOT LIKE 'P%'
+    -> ORDER BY year DESC, winner ASC;
++------+------------+------------------------+---------+-----------+
+| year | subject    | winner                 | country | category  |
++------+------------+------------------------+---------+-----------+
+| 1994 | Literature | Kenzaburo Oe           | Japan   | Linguist  |
+| 1994 | Economics  | Reinhard Selten        | Germany | Economist |
+| 1987 | Chemistry  | Donald J. Cram         | USA     | Scientist |
+| 1987 | Chemistry  | Jean-Marie Lehn        | France  | Scientist |
+| 1987 | Literature | Joseph Brodsky         | Russia  | Linguist  |
+| 1987 | Economics  | Robert Solow           | USA     | Economist |
+| 1971 | Chemistry  | Gerhard Herzberg       | Germany | Scientist |
+| 1971 | Literature | Pablo Neruda           | Chile   | Linguist  |
+| 1971 | Economics  | Simon Kuznets          | Russia  | Economist |
+| 1970 | Literature | Aleksandr Solzhenitsyn | Russia  | Linguist  |
+| 1970 | Chemistry  | Luis Federico Leloir   | France  | Scientist |
+| 1970 | Economics  | Paul Samuelson         | USA     | Economist |
++------+------------+------------------------+---------+-----------+
+12 rows in set (0.01 sec)
