@@ -196,3 +196,27 @@ mysql> SELECT *
 | 1970 | Economics  | Paul Samuelson         | USA     | Economist |
 +------+------------+------------------------+---------+-----------+
 12 rows in set (0.01 sec)
+
+mysql> SELECT year, subject, winner, country, category
+    -> FROM Nobel_win
+    -> WHERE year = 1970
+    -> ORDER BY
+    -> CASE
+    ->     WHEN subject = 'Chemistry' THEN 1
+    ->     WHEN subject = 'Economics' THEN 1
+    ->     ELSE 0
+    -> END,
+    -> subject ASC;
++------+------------+------------------------+---------+-----------+
+| year | subject    | winner                 | country | category  |
++------+------------+------------------------+---------+-----------+
+| 1970 | Literature | Aleksandr Solzhenitsyn | Russia  | Linguist  |
+| 1970 | Physics    | Hannes Alfven          | Sweden  | Scientist |
+| 1970 | Physics    | Louis Neel             | France  | Scientist |
+| 1970 | Physiology | Ulf von Euler          | Sweden  | Scientist |
+| 1970 | Physiology | Bernard Katz           | Germany | Scientist |
+| 1970 | Physiology | Julius Axelrod         | USA     | Scientist |
+| 1970 | Chemistry  | Luis Federico Leloir   | France  | Scientist |
+| 1970 | Economics  | Paul Samuelson         | USA     | Economist |
++------+------------+------------------------+---------+-----------+
+8 rows in set (0.00 sec)
